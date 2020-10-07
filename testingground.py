@@ -1,2 +1,2 @@
-dolls = 5
-print("There are " + dolls + " dolls")
+b=input('Hi is a random example.', end=" ")
+print('This is on the same line.')
