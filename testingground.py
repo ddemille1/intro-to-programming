@@ -1,2 +1,6 @@
-b=input('Hi is a random example.', end=" ")
-print('This is on the same line.')
+x = 5
+
+if x = 5:
+    print("first")
+else:
+    print("second")
