@@ -1,2 +1,6 @@
-dolls = 5
-print("There are " + dolls + " dolls")
+x = 5
+
+if x = 5:
+    print("first")
+else:
+    print("second")
