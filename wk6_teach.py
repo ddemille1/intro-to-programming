@@ -1,12 +1,17 @@
 #wk 6 teach activity
 #roller coaster admission calculator
+
 import os
 os.system('cls')
 first_age = int(input('What is the age of the first rider? '))
+
+#start applying golden passport condition
 if first_age >= 12 and first_age <= 17:
     passport_first = input('Does first rider have a golden passport (yes/no)? ')
-    if passport_first.lower == 'yes':
-        first_age = 18    
+    if passport_first.lower() == 'yes':
+        first_age = 18
+#end applying golden passport condition
+  
 first_height = int(input('What is the height (in inches) of the first rider? '))
 is_second = input('Is there a second rider (yes/no)? ')
 
@@ -44,7 +49,3 @@ if can_ride:
     print('Have a fun ride!')
 if not can_ride:
     print('Sorry, you may not ride.')
-
-    #16, yes, 63, no doesn't work 
-    # 18, 63, no does work. 
-    # golden age thing not working for single rider.
