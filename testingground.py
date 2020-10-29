@@ -11,5 +11,5 @@ print(digit_count)
 for row in range(1, size +1):
     for column in range(1, size +1):
         number = row * column
-        print(f'{number:}', end=' ')
+        print(f'{number:{digit_count}}', end=' ')
     print()
