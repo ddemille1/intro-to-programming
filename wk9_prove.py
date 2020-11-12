@@ -15,7 +15,7 @@ while repeat:
     if action == 1:
         item = input('What item would you like to add? ')
         item_names.append(item)
-        print(f'{item} has been added to the cart.\n')
+        print(f"'{item}' has been added to the cart.\n")
     elif action == 2:
         for item in item_names:
             print(item)
