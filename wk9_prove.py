@@ -17,6 +17,7 @@ while repeat:
         item_names.append(item)
         print(f"'{item}' has been added to the cart.\n")
     elif action == 2:
+        print('The contents of your shopping cart are: ')
         for item in item_names:
             print(item)
         print()
