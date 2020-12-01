@@ -34,7 +34,7 @@ highest_balance = -1
 for i in range(len(account_names)):
     name = account_names[i]
     balance = account_balances[i]
-    if balance > highest_balance
+    if balance > highest_balance:
         highest_balance = balance
         highest_name = name
 
