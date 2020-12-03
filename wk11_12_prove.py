@@ -16,13 +16,21 @@ with open('life-expectancy.csv') as life_expectancy_file:
     user_longest_life = -1
     user_longest_country = ""
 
+    #info about a specific country
+    user_selected_country = input("What country would you like to know about? ")
+    avg_life_expectancy_list_by_country = []
+    user_shortest_life_by_country = 200
+    user_shortest_year_by_country = ""
+    user_longest_life_by_country = -1
+    user_longest_year_by_country = ""
+
 
     for line in life_expectancy_file:
         life_expectancy_file = line.strip()
         parts = line.split(',')
-        life_expectancy = float(parts[3])
         country = parts[0]
         year = int(parts[2])
+        life_expectancy = float(parts[3])
         if life_expectancy < shortest_life:
             shortest_life = life_expectancy   
             shortest_country = country    
@@ -44,7 +52,18 @@ with open('life-expectancy.csv') as life_expectancy_file:
                 user_longest_life = life_expectancy
                 user_longest_country = country
 
-
+#gather infor about a specific country of user's choice
+        if user_selected_country.lower() == country:
+            avg_life_expectancy_list_by_country.append(life_expectancy)
+            if life_expectancy < user_shortest_life_by_country:
+                user_shortest_life_by_country = life_expectancy   
+                user_shortest_year_by_country = year    
+            if life_expectancy > user_longest_life_by_country:
+                user_longest_life_by_country = life_expectancy
+                user_longest_year_by_country = year
+            print(avg_life_expectancy_list_by_country)            
+    print(f'The longest life expectancy in {user_selected_country} is {user_longest_life_by_country}. It occured in {user_longest_year_by_country}.')
+    print(f'The shortest life expeceancy in {user_selected_country} is {user_shortest_life_by_country}. It occured in {user_shortest_year_by_country}.')
 
 #add years in the list together,
     sum = sum(avg_life_expectancy_list)
@@ -61,4 +80,5 @@ with open('life-expectancy.csv') as life_expectancy_file:
 
     print(f'The shortest life expectancy of the data set is: {shortest_life} in {shortest_country} in {shortest_year}.')
     print(f'The longest life expectancy of the data set is: {longest_life} in {longest_country} in {longest_year}.')
+
 
