@@ -1,38 +1,19 @@
-# import os
-# os.system('cls')
+with open('life-expectancy.csv') as life_expectancy_file:
+    life_expectancy_list = []
+    list_with_diff = []
 
-# shopping_cart = []
+    for line in life_expectancy_file:
+        life_expectancy_file = line.strip()
+        parts = line.split(',')
+        country = parts[0]
+        year = int(parts[2])
+        life_expectancy = float(parts[3])
 
-# print('Please enter the items of the shopping list (type: quit to finish): ')
-
-# run = True
-# while run:
-#     item = input('Item: ')
-#     shopping_cart.append(item)
-#     if item.lower() == 'quit':
-#         shopping_cart.pop()
-#         run = False
-    
-# print()
-
-# print('The shopping list is: ')
-# for i in shopping_cart:
-#     print(i)
-# print()
-
-# print('The shopping list with indexes is:')
-# for i in range(len(shopping_cart)):
-#     item = shopping_cart[i]
-#     print(f'{i}. {item}')
-# print()
-
-# i = int(input('Which item would you like to change? '))
-# replacement = input('What is the new item? ')
-
-# shopping_cart[i] = replacement
-
-# print('\nThe shopping list with indexes is:')
-# for i in range(len(shopping_cart)):
-#     item = shopping_cart[i]
-#     print(f'{i}. {item}')
-# print()
+        
+        life_expectancy_list.append(int(life_expectancy))
+        for n in range(1, len(life_expectancy_list)):
+            list_with_diff.append(life_expectancy_list[n]-life_expectancy_list[n-1])
+    biggest_diff = max(list_with_diff)
+    print(f'The biggest change between years is: {biggest_diff}')
+       
+#len(life_expectancy_list
